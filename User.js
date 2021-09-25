@@ -27,14 +27,13 @@ const mongoose = require("mongoose");
     userImage: {
       type: String,
     },
+
     userDetail: {
-      userTitle: {
-        type: String,
-      },
-      userCity: {
-        type: String,
-      }
+      userTitle: {type:String},
+      userCity: {type:String},
     }
+    
+  
   },
   { timestamps: true }
 );

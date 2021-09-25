@@ -14,7 +14,8 @@ const UserDetailType = new GraphQLObjectType({
 
   fields: () => ({
      
-   
+    userTitle: { type: GraphQLString },
+    userCity: { type: GraphQLString },  
      
   }),
 });
@@ -32,11 +33,11 @@ const UserType = new GraphQLObjectType({
     userFirebaseToken: { type: GraphQLString },
     userActive: { type: GraphQLString },
     userImage: { type: GraphQLString },
-    userDetail:   {
-      userTitle: { type: GraphQLString },
-      userCity: { type: GraphQLString },
-    } 
+    UserDetail: {
+     type:UserDetailType
+    }
+   
   }),
 });
 
-module.exports = { UserType};
+module.exports = { UserType,UserDetailType };

@@ -15,7 +15,7 @@ const {  register  } =require("./mutations")
 const  QueryType  =new GraphQLObjectType({
     name:"QueryType",
     description:"Queries",
-    fields:{ users}
+    fields:{ users }
 });
 
 
@@ -24,10 +24,10 @@ const  QueryType  =new GraphQLObjectType({
 const MutationType  =new GraphQLObjectType({
     name:"MutationType",
     description:"Mutations",
-    fields:{ register}
+    fields:{ register }
 });
 
 module.exports = new GraphQLSchema({
     query: QueryType,
     mutation: MutationType
-})
+});

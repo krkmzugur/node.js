@@ -1,6 +1,6 @@
 const { GraphQLString, GraphQLList } = require("graphql");
 //const {createJwtToken} = require("../util/auth")
-const { UserType } = require("./types");
+const { UserType,userDetailType } = require("./types");
 const { User } = require("../models");
 
 const register = {
@@ -13,10 +13,12 @@ const register = {
     userFirebaseToken: { type: GraphQLString },
     userActive: { type: GraphQLString },
     userImage: { type: GraphQLString },
-    userDetail: {
-        userTitle:{type: GraphQLString},   
-        userCity:{type: GraphQLString},
-    },
+    userDetail: 
+    {
+      userTitle: { type: GraphQLString },
+      userCity: { type: GraphQLString },
+   }
+  
   },
   async resolve(parent, args) {
     const {
@@ -27,12 +29,13 @@ const register = {
       userFirebaseToken,
       userActive,
       userImage,
-      userDetail :{
+      userDetail: {
         userTitle,
         userCity
       }
-    
+     
     } = args;
+
     const user = new User({
       userName,
       userLastname,
@@ -42,9 +45,9 @@ const register = {
       userActive,
       userImage,
       userDetail: {
-          userTitle,
-          userCity
-    }
+        userTitle,
+        userCity
+      }  
     });
 
    
